@@ -3,35 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- Tema warna gelap menyesuaikan undangan -->
     <meta name="theme-color" content="#1a1a1a">
     <title>Undangan Pernikahan Valent & Rosid</title>
     <style>
-        /* Menghilangkan margin dan membuat layar pas 100% */
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            background-color: #1a1a1a; /* Background diubah gelap agar menyatu */
-        }
-
-        /* Memaksa Iframe mengisi seluruh layar */
-        iframe {
-            flex-grow: 1;
-            border: none;
-            width: 100%;
-            height: 100%;
-            -webkit-overflow-scrolling: touch; /* Kelancaran scroll di iOS/iPhone */
-            overflow-y: auto;
-        }
+        html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background-color: #1a1a1a; }
+        iframe { flex-grow: 1; border: none; width: 100%; height: 100%; -webkit-overflow-scrolling: touch; overflow-y: auto; }
     </style>
 </head>
 <body>
-    <!-- Pastikan link src di bawah ini adalah link Deployment "Executable" Google Apps Script Anda -->
-    <iframe src="https://script.google.com/a/macros/guru.paud.belajar.id/s/AKfycbw_HAeuikU-zrvgpWXzDRnWibf6qKSU7T3RfqUMXTfWDSx8PSy26Kbr1tHS5rxLaUcnAQ/exec"></iframe>
+    <iframe id="appFrame" src=""></iframe>
+    <script>
+        // Masukkan Link Web App Apps Script Anda di sini
+        var gasLink = "https://script.google.com/a/macros/guru.paud.belajar.id/s/AKfycbw_HAeuikU-zrvgpWXzDRnWibf6qKSU7T3RfqUMXTfWDSx8PSy26Kbr1tHS5rxLaUcnAQ/exec";
+        
+        // Meneruskan parameter (?to=Nama) ke dalam iframe agar terbaca oleh Apps Script
+        document.getElementById('appFrame').src = gasLink + window.location.search;
+    </script>
 </body>
 </html>
